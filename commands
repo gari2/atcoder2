@@ -1,0 +1,29 @@
+for atcoder
+<submit>
+tam (filename) (type of contest) (contest number)
+? 言語を選んでね！！！！ >>  C++14 (GCC 5.4.1)
+? 問題を選んでね！！！！ >>  A~D choose number
+
+<dl sample>
+oj URL
+<test>
+g++ (filename)
+oj test
+
+<debug>
+g++ -g (filename)
+
+・workflow
+<dl sample>
+<debug>
+<test>
+<submit>
+rm -rf test
+
+atcoder-cliを使ったら、もっと便利になる可能性ありそう
+具体的には、　問題ごとにディレクトリを分けることでrmの必要が無くなりそう
+
+<atcoder-cli>
+acc new (contestname)
+cd (contestname)
+
