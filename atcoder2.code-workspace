@@ -6,5 +6,9 @@
 		{
 			"path": "atcoder2"
 		}
-	]
+	],
+	"settings": {
+		"C_Cpp.default.cppStandard": "c++14",
+		"C_Cpp.default.intelliSenseMode": "gcc-x64"
+	}
 }
