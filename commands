@@ -1,6 +1,6 @@
 for atcoder
-<submit>
-tam (filename) (type of contest) (contest number)
+<submit（atam）>
+tam (filename)(space)(type of contest)(space)(contest number)
 ? 言語を選んでね！！！！ >>  C++14 (GCC 5.4.1)
 ? 問題を選んでね！！！！ >>  A~D choose number
 
@@ -14,10 +14,20 @@ oj test
 g++ -g (filename)
 
 ・workflow
-<dl sample>
+<make directory>
+acc new (name of contest)
 <debug>
 <test>
-<submit>
+g++ (filename)
+oj test
+<submit()>
+tam (filename)(space)(type of contest)(space)(contest number)
+? 言語を選んでね！！！！ >>  C++14 (GCC 5.4.1)
+? 問題を選んでね！！！！ >>  A~D choose number
+<for next problem....>
+acc add 
+.....
+
 rm -rf test
 
 atcoder-cliを使ったら、もっと便利になる可能性ありそう
@@ -26,4 +36,14 @@ atcoder-cliを使ったら、もっと便利になる可能性ありそう
 <atcoder-cli>
 acc new (contestname)
 cd (contestname)
+acc add -> choose problem(A~D) 
+acc s(AOJとAtcoderでID名が違っているので私の場合できなそう、submitにはatamを使う)
 
+<テンプレートの設定（atcoder-cli）>
+cd `acc config-dir`
+cd cpp
+vim cpp -> 変更後、:wq
+<githubとの連携>
+git commit -am "add feature"
+git add -A
+git push

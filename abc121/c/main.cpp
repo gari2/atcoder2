@@ -1,31 +1,42 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<utility>
-#include<string>
-#include<cmath>
-#include<cstring>
-#include<queue>
-#include<map>
-#include<climits>
-#include<set>
-
-#define REP(i, n) for(int i = 0;i < n;i++)
-#define REPR(i, n) for(int i = n;i >= 0;i--)
-#define FOR(i, m, n) for(int i = m;i < n;i++)
-#define FORR(i, m, n) for(int i = m;i >= n;i--)
-#define SORT(v, n) sort(v, v+n);
-#define VSORT(v) sort(v.begin(), v.end());
-#define llong long long
-#define pb(a) push_back(a)
+#include <iostream>
+#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
-typedef pair<int, int> pii;
-typedef long long int ll;
-typedef pair<ll,ll> pll;
-int dx[4] = {1,0,0,-1};
-int dy[4] = {0,1,-1,0};
-#define MOD 1000000007
-#define ARRAY_MAX 200005
-
-const int INF = 1e9+7;
-
+class Shop{
+  public:
+    int cost;
+    int num;
+  Shop(int a, int b){
+    cost = a;
+    num = b;
+  }
+  bool operator<(const Shop &another) const
+  {
+    return cost < another.cost;
+  };
+};
+int main(){
+  double N,M,m = 0;
+  long long ans = 0;
+  cin >> N >> M;
+  vector<Shop> shopList;
+  int tempA, tempB;
+  for(int n=0;n<N;n++){
+    cin >> tempA >> tempB;
+    shopList.push_back(Shop(tempA, tempB));
+  }
+  std::sort(shopList.begin(),shopList.end());
+  for(int n=0;n<N;n++){
+    //cout << shopList[n].cost << " "<<shopList[n].num << endl;
+    int buy = shopList[n].num;
+    if(m + buy > M){
+      buy = M - m;
+      ans += buy * (long long)shopList[n].cost;
+      break;
+    }
+    m += buy;
+    ans += buy * (long long)shopList[n].cost;
+  }
+ 
+  cout << ans << endl;
+}
